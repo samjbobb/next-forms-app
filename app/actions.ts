@@ -5,7 +5,7 @@ import postgres from "postgres";
 import { z } from "zod";
 
 let sql = postgres(process.env.DATABASE_URL || process.env.POSTGRES_URL!, {
-  ssl: "allow",
+  ssl: false,
 });
 
 // CREATE TABLE todos (

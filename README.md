@@ -1,25 +1,20 @@
 # Forms with Next.js and Server Actions
 
-This example shows how you can build forms with Next.js and Server Actions.
+From https://github.com/vercel/next.js/tree/canary/examples/next-forms with some versions updated to get this working on 2024-07-02.
 
-## Deploy your own
+`pnpm install` to install the dependencies (or `npm install` probably works).
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/next-forms&project-name=next-forms&repository-name=next-forms&stores=%5B%7B%22type%22%3A%22postgres%22%7D%5D)
+Run a local instance of Postgres via your preferred method.
 
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
-
-```bash
-npx create-next-app --example next-forms next-forms-app
+```
+CREATE TABLE todos (
+  id SERIAL PRIMARY KEY,
+  text TEXT NOT NULL
+);
 ```
 
-```bash
-yarn create next-app --example next-forms next-forms-app
-```
+Create a `.env` with 
 
-```bash
-pnpm create next-app --example next-forms next-forms-app
-```
+`POSTGRES_URL=postgresql://...`
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+`pnpm dev` to run the development server.

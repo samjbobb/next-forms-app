@@ -4,7 +4,7 @@ import { AddForm } from "@/app/add-form";
 import { DeleteForm } from "@/app/delete-form";
 
 let sql = postgres(process.env.DATABASE_URL || process.env.POSTGRES_URL!, {
-  ssl: "allow",
+  ssl: false,
 });
 
 export default async function Home() {
